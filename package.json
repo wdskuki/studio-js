@@ -1,0 +1,23 @@
+{
+  "name": "studio",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wdskuki/studio-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wdskuki/studio-js/issues"
+  },
+  "homepage": "https://github.com/wdskuki/studio-js#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "co": "^4.6.0",
+    "node-fetch": "^3.2.5"
+  }
+}
