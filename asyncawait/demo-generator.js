@@ -1,8 +1,5 @@
-import axios from 'axios'
-const baseURL = 'https://huatuce.com/api/debug'
-
-
 function* foo() {
+  console.log('foo first next')
   const a = yield 1.1 + 1.2
 
   console.log('a = ', a)
@@ -11,8 +8,10 @@ function* foo() {
   console.log('b = ', b)
   return 'end' + b 
 }
-const c = foo()
-c.next() // {value: 1, done: false}
-c.next() // {value: 2, done: false}
-c.next('!!!') // {value: 'end!!!', done: true}
-c.next() // {value: undefined, done: true}
+const f = foo()
+
+f.next() // foo first next,  {value: 2.3, done: false}
+
+f.next() // a = undefined,  {value: 2, done: false}
+
+f.next(333) // b = 333,  {value: 'end333', done: true}

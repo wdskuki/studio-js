@@ -1,20 +1,4 @@
-// import co from 'co'
-// import axios from 'axios'
-// const baseURL = 'https://huatuce.com/api/debug'
-
-// function* foo() {
-//   const ret1 = yield axios(`${baseURL}/hello`)
-//   const ret2 = yield axios(`${baseURL}/${ret1.data.key}`)
-
-//   const ret = `hello ${ret1.data.key} ${ret2.data.key}`
-//   console.log(ret)
-// }
-
-// co(foo)
-
-
 const fs = require('fs')
-const co = require('co')
 
 // Thunk版本的readFile（单参数版本）
 var readFileThunk = function (fileName) {
@@ -32,8 +16,18 @@ function* readFileThunkGen() {
   console.log(ret)
 }
 
-co(readFileThunkGen)
+function run(genFn) {
+  var gen = genFn();
+  
+  function next(err, data) {
+    var result = gen.next(data);
+    if (result.done) return;
+    result.value(next);
+  }
+  next();
+}
 
+run(readFileThunkGen)
 
 
 
