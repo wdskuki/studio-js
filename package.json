@@ -21,6 +21,7 @@
     "@babel/traverse": "^7.18.5",
     "axios": "^0.27.2",
     "co": "^4.6.0",
-    "node-fetch": "^3.2.5"
+    "node-fetch": "^3.2.5",
+    "webpack": "^5.73.0"
   }
 }
