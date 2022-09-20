@@ -1,0 +1,17 @@
+{
+  "version": 3,
+  "file": "main.js",
+  "mappings": "MAAA,IAAIA,EAAQ,KACZA,EAAQ,GACRC,QAAQC,IAAIF,GACZA,EAAQ,I",
+  "sources": [
+    "webpack:///./test.js"
+  ],
+  "sourcesContent": [
+    "let value = null\nvalue = 11\nconsole.log(value)\nvalue = 12"
+  ],
+  "names": [
+    "value",
+    "console",
+    "log"
+  ],
+  "sourceRoot": ""
+}
