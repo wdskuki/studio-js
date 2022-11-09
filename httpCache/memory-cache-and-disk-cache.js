@@ -10,8 +10,8 @@ http
       res.end(data);
     } else if(req.url === '/static/drug.png' || req.url === '/static/index.css' || req.url === '/static/index.js') {
       const data = fs.readFileSync(`.${req.url}`);
-      res.setHeader("Cache-Control", "max-age=15");
-      // res.setHeader('Expires', new Date(Date.now() + 5 * 1000).toUTCString()) // Expires
+      res.setHeader("Cache-Control", "no-cache");
+      // res.setHeader('Expires', new Date(Date.now() + 100 * 1000).toUTCString()) // Expires
       res.end(data);
     }
   })

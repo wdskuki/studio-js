@@ -12,8 +12,8 @@ http
       const data = fs.readFileSync(`.${req.url}`);
 
       res.setHeader("Cache-Control", "max-age=10");
-      // res.setHeader("Cache-Control", "no-cache");
-      // res.setHeader("Cache-Control", "no-store");
+      res.setHeader("Cache-Control", "no-cache");
+      res.setHeader("Cache-Control", "no-store");
       res.end(data);
     } else if (req.url === '/sw.js') {
       const data = fs.readFileSync("./static/sw.js");
