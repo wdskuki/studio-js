@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .pic {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: url("http://image.studio.dajiazhongyi.com/studio/image/3c/Wq/jx/3cWqjxznUymycVmUhsgl.jpg") no-repeat;
+        background-size: cover;
+        animation: fade-away 2.5s linear forwards;
+      }
+      .text {
+        position: absolute;
+        line-height: 55px;
+        color: #fff;
+        font-size: 36px;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        /* animation: show 2s cubic-bezier(0.74, -0.1, 0.86, 0.83) forwards; */
+        animation: show 2s linear forwards;
+      }
+
+      @keyframes fade-away {
+        30% {
+          filter: brightness(1);
+        }
+        100% {
+          filter: brightness(0);
+        }
+      }
+      @keyframes show {
+        20% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="pic"></div>
+      <div class="text">
+        <p>Hello World!</p>
+        <br />
+        <p>你好世界</p>
+      </div>
+    </div>
+  </body>
+</html>
