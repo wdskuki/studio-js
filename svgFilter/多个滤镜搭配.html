@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background: url('https://dsweiblog.oss-cn-shanghai.aliyuncs.com/tmp/baizhi.png') no-repeat center/contain;
+        filter: url(#MyFilter);
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+
+    <svg>
+      <defs>
+        <!-- Filter declaration -->
+        <filter id="MyFilter">
+          <!-- offsetBlur -->
+          <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur_1" />
+          <feOffset in="blur_1" dx="10" dy="10" result="offsetBlur_1" />
+
+          <!-- merge SourceGraphic + offsetBlur -->
+          <feMerge>
+            <feMergeNode in="offsetBlur_1" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+  </body>
+</html>

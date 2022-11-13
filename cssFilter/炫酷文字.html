@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        margin-top: 50px;
+        text-align: center;
+        background-color: #000;
+        filter: contrast(30);
+      }
+      .text {
+        font-size: 50px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        letter-spacing: -40px;
+        color: #fff;
+        animation: move-letter 4s linear forwards;
+      }
+      @keyframes move-letter {
+        0% {
+          opacity: 0;
+          letter-spacing: -40px;
+          filter: blur(5px);
+        }
+        25% {
+          opacity: 1;
+          filter: blur(10px);
+        }
+        50% {
+          filter: blur(5px);
+        }
+        100% {
+          letter-spacing: 20px;
+          filter: blur(2px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span class="text">fantastic</span>
+    </div>
+    <!-- <span style="letter-spacing: 10px;">fantastic</span> -->
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+      .fire {
+        width: 0;
+        height: 0;
+
+        border-radius: 45%;
+        box-sizing: border-box;
+        border: 100px solid #000;
+        border-bottom: 100px solid transparent;
+        background-color: #b5932f;
+        transform:scaleX(0.4);
+        filter: blur(20px) contrast(30);
+      }
+      .dot {
+        position: absolute;
+        background-color: black;
+        border-radius: 50%;
+      }
+      .dot1 {
+        bottom: -140px;
+        left: 20px;
+        width: 24px;
+        height: 24px;
+        animation: move1 2s infinite 1s linear;
+      }
+      .dot2 {
+        bottom: -200px;
+        left: 0px;
+        width: 24px;
+        height: 24px;
+        animation: move2 1s infinite 5s linear;
+      }
+      .dot3 {
+        bottom: -154px;
+        left: -32px;
+        width: 24px;
+        height: 24px;
+        animation: move3 2s infinite 0.3s linear;
+      }
+      .dot4 {
+        bottom: -200px;
+        left: 0px;
+        width: 24px;
+        height: 24px;
+        animation: move4 1.4s infinite 3s linear;
+      }
+      .dot5 {
+        bottom: -100px;
+        left: 11px;
+        width: 24px;
+        height: 24px;
+        animation: move5 0.5s infinite 4s linear;
+      }
+      .dot6 {
+        bottom: -220px;
+        left: 22px;
+        width: 24px;
+        height: 24px;
+        animation: move6 2s infinite 1s linear;
+      }
+      @keyframes move1 {
+        100% {
+          /* transform: translate3d(0, -600%, 0); */
+          transform: translate(0, -600%);
+        }
+      }
+      @keyframes move2 {
+        100% {
+          /* transform: translate3d(0, -600%, 0); */
+          transform: translate(0, -600%);
+        }
+      }
+      @keyframes move3 {
+        100% {
+          /* transform: translate3d(0, -600%, 0); */
+          transform: translate(0, -600%);
+        }
+      }
+      @keyframes move4 {
+        100% {
+          /* transform: translate3d(0, -600%, 0); */
+          transform: translate(0, -600%);
+        }
+      }
+      @keyframes move5 {
+        100% {
+          /* transform: translate3d(0, -600%, 0); */
+          transform: translate(0, -600%);
+        }
+      }
+      @keyframes move6 {
+        100% {
+          /* transform: translate3d(0, -400%, 0); */
+          transform: translate(0, -600%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fire">
+      <div class="dot dot1"></div>
+      <div class="dot dot2"></div>
+      <div class="dot dot3"></div>
+      <div class="dot dot4"></div>
+      <div class="dot dot5"></div>
+      <div class="dot dot6"></div>
+    </div>
+  </body>
+</html>

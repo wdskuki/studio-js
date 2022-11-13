@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        height: 520px;
+        width: 400px;
+        display: flex;
+        clip-path: inset(20px);
+        flex-direction: column;
+      }
+      img {
+        height: 50%;
+        width: 100%;
+      }
+      .reflect {
+        transform: translateY(-2px) scaleY(-1);
+        filter: url(#displacement-wave-filter);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="https://dsweiblog.oss-cn-shanghai.aliyuncs.com/tmp/moon.jpg" />
+      <img src="https://dsweiblog.oss-cn-shanghai.aliyuncs.com/tmp/moon.jpg" class="reflect" />
+    </div>
+    <!--定义svg滤镜，这里使用的是feTurbulence滤镜-->
+    <svg>
+      <defs>
+        <filter id="displacement-wave-filter">
+          <!--baseFrequency设置0.01 0.09两个值，代表x轴和y轴的噪声频率-->
+          <feTurbulence baseFrequency="0.5">
+            <!--这是svg动画的定义方式，通过动画不断改变baseFrequency的值，从而形成波动效果-->
+            <animate attributeName="baseFrequency" dur="10s" keyTimes="0;0.5;1" values="0.01 0.09;0.02 0.13;0.01 0.09" repeatCount="indefinite"></animate>
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" scale="5" />
+        </filter>
+      </defs>
+    </svg>
+  </body>
+</html>
