@@ -18,14 +18,14 @@
         width: 100%;
       }
       .reflect {
-        transform: translateY(-2px) scaleY(-1);
+        /* transform: translateY(-2px) scaleY(-1); */
         filter: url(#displacement-wave-filter);
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <img src="https://dsweiblog.oss-cn-shanghai.aliyuncs.com/tmp/moon.jpg" />
+      <!-- <img src="https://dsweiblog.oss-cn-shanghai.aliyuncs.com/tmp/moon.jpg" /> -->
       <img src="https://dsweiblog.oss-cn-shanghai.aliyuncs.com/tmp/moon.jpg" class="reflect" />
     </div>
     <!--定义svg滤镜，这里使用的是feTurbulence滤镜-->
@@ -33,11 +33,12 @@
       <defs>
         <filter id="displacement-wave-filter">
           <!--baseFrequency设置0.01 0.09两个值，代表x轴和y轴的噪声频率-->
-          <feTurbulence baseFrequency="0.5">
+          <feTurbulence baseFrequency="0.05" numOctaves="1" seed="0" stitchTiles="stitch" type="turbulence" result="turbulence-tmp">
             <!--这是svg动画的定义方式，通过动画不断改变baseFrequency的值，从而形成波动效果-->
-            <animate attributeName="baseFrequency" dur="10s" keyTimes="0;0.5;1" values="0.01 0.09;0.02 0.13;0.01 0.09" repeatCount="indefinite"></animate>
+            <animate attributeName="baseFrequency" dur="10s" keyTimes="0;0.5;1" values="0.01 0.09;0.02 0.13;0.01 0.09" repeatCount="indefinite"/>
           </feTurbulence>
-          <feDisplacementMap in="SourceGraphic" scale="5" />
+          <!-- <feImage width="128" height="128" href="./img/51_51_51_1.png" result="map-temp" /> -->
+          <feDisplacementMap in="SourceGraphic" in2="turbulence-tmp" scale="10" />
         </filter>
       </defs>
     </svg>
