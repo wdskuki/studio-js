@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <button onclick="start">开始</button>
+    <button onclick="stop">暂停</button>
+    <button onclick="updateSpeed(100)">加速</button>
+  </body>
+  <script src="../node_modules/lottie-web/build/player/lottie.min.js"></script>
+  <!-- <script src="https://cdnjs.com/libraries/bodymovin" type="text/javascript"></script> -->
+  <script>
+    let lottieInstance = null
+    function init() {
+      // 读取动画容器
+      const lottieContainer = document.querySelector("#container");
+      if (!lottieContainer) return;
+      // 实例化
+      lottieInstance = lottie.loadAnimation({
+        // UED 提供的 动画的 json 文件
+        path: "https://static-cdn.canyuegongzi.xyz/lf20/lf20_jv0xz0qi.json",
+        // 渲染方式
+        renderer: "svg",
+        // 是否循环
+        loop: true,
+        container: lottieContainer,
+      });
+    }
+    init();
+
+    function start() {
+      lottieInstance.play()
+    }
+
+    function stop() {
+      lottieInstance.stop()
+    }
+
+
+    function updateSpeed(val){
+      lottieInstance.setSpeed(val)
+    }
+  </script>
+</html>
