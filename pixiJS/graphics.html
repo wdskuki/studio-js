@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+</body>
+<script src="../node_modules/pixi.js/dist/pixi.min.js"></script>
+<script>
+  let app = new PIXI.Application({ antialias: true,background: '#1099bb'});
+  document.body.appendChild(app.view);
+
+  const graphics = new PIXI.Graphics();
+  app.stage.addChild(graphics);
+
+  // Rectangle
+  graphics.beginFill(0xDE3249);
+  graphics.drawRect(50, 50, 100, 100);
+  graphics.endFill();
+
+  
+  // Rectangle + line style 1
+  graphics.lineStyle(2, 0xFEEB77, 1);
+  graphics.beginFill(0x650A5A);
+  graphics.drawRect(200, 50, 100, 100);
+  graphics.endFill();
+
+  // Circle
+  graphics.lineStyle(0); // draw a circle, set the lineStyle to zero so the circle doesn't have an outline
+  graphics.beginFill(0xDE3249, 1);
+  graphics.drawCircle(100, 250, 50);
+  graphics.endFill();
+
+  // draw polygon
+  const path = [600, 370, 700, 460, 780, 420, 730, 570, 590, 520];
+
+  graphics.lineStyle(0);
+  graphics.beginFill(0x3500FA, 1);
+  graphics.drawPolygon(path);
+  graphics.endFill();
+
+  // graphics.x = app.screen.width / 2;
+  // graphics.y = app.screen.height / 2;
+  // graphics.pivot.x = graphics.width / 2;
+  // graphics.pivot.y = graphics.height / 2;
+  // graphics.isSprite = true;
+  // // graphics.anchor.set(0.5);
+  // // graphics.
+  // app.ticker.add(delta => {
+  //   graphics.rotation += 0.01 * delta;
+  // })
+
+
+</script>
+</html>
