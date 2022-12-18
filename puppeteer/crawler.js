@@ -2,6 +2,13 @@ const puppeteer = require('puppeteer')
 const fs = require('fs');
 const URL = 'http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2021/index.html';
 
+const oversea = [
+  { "code": "90", "name": "香港特别行政区" },
+  { "code": "12", "name": "澳门特别行政区" },
+  { "code": "81", "name": "台湾省" },
+  { "code": "000000", "name": "海外国家" },
+]
+
 const resultArray = [];
 
 /**
@@ -17,6 +24,8 @@ const node = {
   const page = await browser.newPage();
   await enter(page, URL);
   await browser.close();
+
+  oversea.forEach(item => resultArray.push(item))
 
   fs.writeFile("address.json", JSON.stringify(resultArray), 'utf8', function(err) {
     if(err) {
