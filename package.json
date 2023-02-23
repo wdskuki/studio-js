@@ -22,6 +22,8 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/traverse": "^7.18.5",
     "axios": "^0.27.2",
+    "browser-unpack": "^1.4.2",
+    "browserify": "^17.0.0",
     "co": "^4.6.0",
     "etag": "^1.8.1",
     "lottie-web": "^5.9.6",
@@ -29,6 +31,7 @@
     "node-xlsx": "^0.21.0",
     "pixi.js": "^7.0.4",
     "puppeteer": "^19.3.0",
+    "three": "^0.147.0",
     "webpack": "^5.73.0",
     "xlsx": "^0.18.5"
   }
