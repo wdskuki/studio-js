@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -22,17 +24,30 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/traverse": "^7.18.5",
     "axios": "^0.27.2",
+    "base64-js": "^1.5.1",
     "browser-unpack": "^1.4.2",
     "browserify": "^17.0.0",
     "co": "^4.6.0",
+    "crypto-js": "^4.1.1",
+    "csv": "^6.2.8",
     "etag": "^1.8.1",
+    "express": "^4.18.2",
+    "handlebars": "^4.7.7",
+    "hmacsha1": "^1.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "js-base64": "^3.7.5",
     "lottie-web": "^5.9.6",
+    "memory-fs": "^0.5.0",
+    "mime": "^3.0.0",
     "node-fetch": "^3.2.5",
+    "node-html-to-image": "^3.3.0",
     "node-xlsx": "^0.21.0",
     "pixi.js": "^7.0.4",
     "puppeteer": "^19.3.0",
     "three": "^0.147.0",
-    "webpack": "^5.73.0",
+    "utf8": "^3.0.0",
+    "webpack": "^5.75.0",
+    "webpack-dev-server": "^4.11.1",
     "xlsx": "^0.18.5"
   }
 }

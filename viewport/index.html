@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div>布局视口：window.innerWidth = {{innerWidthValue}}</div>
+    <div>布局视口：document.documentElement.clientWidth = {{innerWidthValue}}</div>
+    <div>可视视口：window.visualViewport.width = {{visualViewportWidthValue}}</div>
+    <div>屏幕宽度：widnow.screen.width = {{screenWidthValue}}</div>
+  </div>
+</body>
+
+<script type="module">
+  import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js'
+  createApp({
+    data() {
+      return {
+        innerWidthValue: window.innerWidth,
+        clientWidthValue: document.documentElement.clientWidth,
+        visualViewportWidthValue: window.visualViewport.width,
+        screenWidthValue: window.screen.width,
+      }
+    },
+  }).mount('#app')
+</script>
+</html>
