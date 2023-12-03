@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* #image1 {
+      display: block;
+      margin-left: -10000px;
+      margin-top: 2000px;
+    } */
+
+    @font-face {
+      font-family: "AlibabaPuHuiTi";
+      src: url("./AlibabaPuHuiTi-3-115-Black/AlibabaPuHuiTi-3-115-Black.woff") format("woff");
+      font-display: swap;
+    }
+    #text0 {
+      font-family: "AlibabaPuHuiTi";
+    }
+  </style>
+</head>
+<body>
+  <div id="text0">
+    bibendum nulla, vel aliquam enim elit ac lectus. Aenean vel aliquam lectus. Donec vulputate, felis quis luctus tincidunt, erat metus malesuada nibh, id pulvinar odio sapien ac tellus. Phasellus sed mi felis.
+  </div>
+
+  <!-- <img id="image1" src="https://dsweiblog.oss-cn-shanghai.aliyuncs.com/technote/elqsdYqQEefWJbUM2qMO.svg" /> -->
+  <img src="./avatar.png" />
+  <img id="image2" />
+</body>
+<script>
+  const po = new PerformanceObserver((list) => {
+    list.getEntries().forEach((entry) => {
+      console.log(entry);
+    });
+  });
+  po.observe({ entryTypes: ['largest-contentful-paint'] });
+
+  setTimeout(() => {
+    document.getElementById('image2').src = 'https://dsweiblog.oss-cn-shanghai.aliyuncs.com/technote/npm-init.gif';
+  }, 2000)
+
+  // setTimeout(() => {
+  //   document.getElementById('image1').style.marginLeft = '0px';
+  //   document.getElementById('image1').style.marginTop = '0px';
+  // }, 5000)
+</script>
+</html>

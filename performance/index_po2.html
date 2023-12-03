@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+<img id="image0" src="https://www.w3.org/Icons/w3c_main.png" />
+<script>
+const userTimingObserver = new PerformanceObserver(list => {
+  list
+    .getEntries()
+    // Get the values we are interested in
+    .map(({ name, entryType, startTime, duration }) => {
+      const obj = {
+        "Duration": duration,
+        "Entry Type": entryType,
+        "Name": name,
+        "Start Time": startTime,
+      };
+      return JSON.stringify(obj, null, 2);
+    })
+    // Display them to the console.
+    .forEach(console.log);
+  // Disconnect after processing the events.
+  userTimingObserver.disconnect();
+});
+// Subscribe to new events for User-Timing.
+userTimingObserver.observe({entryTypes: PerformanceObserver.supportedEntryTypes});
+</script>
+</body>
+</html>

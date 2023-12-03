@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body onload="init()">
+<img id="image0" src="http://www.w3.org/Icons/w3c_main.png" />
+<img id="image1" src="" />
+<script>
+   function init()
+   {
+        performance.mark("startWork"); // see [[User Timing]]
+        doWork(); // Some developer code
+        performance.mark("endWork");
+
+        measurePerf();
+        setTimeout(() => {
+          document.getElementById('image1').src="https://image.dev.studio.dajiazhongyi.com/owl/24/07939437ccd8805836c538d25a74218976c7cb77.jpg"
+        }, 5000)
+   }
+
+   function measurePerf()
+   {
+       var perfEntries = performance.getEntries();
+       for (var i = 0; i < perfEntries.length; i++)
+       {
+             if (window.console) console.log("Name: "        + perfEntries[i].name      +
+                                             " Entry Type: " + perfEntries[i].entryType +
+                                             " Start Time: " + perfEntries[i].startTime +
+                                             " Duration: "   + perfEntries[i].duration  + "\n");
+       }
+   }
+
+   function doWork() {
+    console.log('pretend to do some work')
+   }
+</script>
+</body>
+</html>

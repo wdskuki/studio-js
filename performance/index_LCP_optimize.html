@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css" />
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" />
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ant-design-vue/4.0.7/antd.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-demi/0.14.6/index.iife.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.5.1/vue-router.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script> -->
+</head>
+<body>
+  <div>
+    bibendum nulla, vel aliquam enim elit ac lectus. 
+    Aenean vel aliquam lectus. Donec vulputate, 
+    felis quis luctus tincidunt, 
+    erat metus malesuada nibh, 
+    id pulvinar odio sapien ac tellus. 
+    Phasellus sed mi felis.
+  </div>
+
+  <img id="image0" src="https://dsweiblog.oss-cn-shanghai.aliyuncs.com/technote/elqsdYqQEefWJbUM2qMO.svg" />
+  <img id="image1" src="https://dsweiblog.oss-cn-shanghai.aliyuncs.com/technote/20231203174111.png" />
+  <!-- <div id="bg0"></div> -->
+</body>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.9/vue.global.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-multiselect/2.1.8/vue-multiselect.min.js"></script>
+<script>
+
+  const po = new PerformanceObserver((list) => {
+    list.getEntries().forEach((entry) => {
+      console.log(entry);
+    });
+  });
+  po.observe({ entryTypes: ['largest-contentful-paint'] });
+
+  // setTimeout(() => {
+  //   // document.getElementById('image1').src="https://dsweiblog.oss-cn-shanghai.aliyuncs.com/technote/20231203174111.png"
+  // }, 1000)
+</script>
+</html>

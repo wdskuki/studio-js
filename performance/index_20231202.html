@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img id="image0" src="http://www.w3.org/Icons/w3c_main.png" />
+    <div>
+      <h1>Heading</h1>
+      <p>
+        bibendum nulla, vel
+      </p>
+  </body>
+  <script>
+    const observer = new PerformanceObserver((entryList) => {
+      // console.dir(entryList.getEntriesByName('first-contentful-paint'))
+      for (const entry of entryList.getEntries()) {
+        console.dir(entry);
+      }
+    });
+    observer.observe({
+      entryTypes: ["first-input"],
+      buffered: true,
+    });
+
+    setTimeout(() => {
+      console.log('click image')
+      document.getElementById('image0').click()
+    }, 4000)
+  </script>
+</html>

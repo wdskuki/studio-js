@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<img id="image0" src="http://www.w3.org/Icons/w3c_main.png" />
+
+<img id="image1" src="" />
+<script>
+var observer = new PerformanceObserver(function(list) {
+  var doneObservingEvents = false;
+  var perfEntries = list.getEntries();
+  for (var i = 0; i < perfEntries.length; i++)
+  {
+       if (window.console) console.log("Name: "        + perfEntries[i].name      +
+                                       " Entry Type: " + perfEntries[i].entryType +
+                                       " Start Time: " + perfEntries[i].startTime +
+                                       " Duration: "   + perfEntries[i].duration  + "\n");
+  }
+  // maybe disconnect after processing the events.
+  if (doneObservingEvents) {
+       observer.disconnect();
+  }
+});
+
+// subscribe to Frame-Timing and User-Timing events
+observer.observe({entryTypes: ['paint', 'mark', 'measure', 'resource', 'navigation']});
+
+setTimeout(() => {
+  document.getElementById('image1').src="https://image.dev.studio.dajiazhongyi.com/owl/24/07939437ccd8805836c538d25a74218976c7cb77.jpg"
+}, 5000)
+</script>
+</body>
+</html>
